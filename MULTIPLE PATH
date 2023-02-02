@@ -1,0 +1,52 @@
+#include <iostream>
+
+using namespace std;
+class A 
+{
+ int a;
+ public:
+ void data()
+ {
+ a=10;
+ cout<<a;
+ }
+};
+class B:public A{
+    int b;
+ public:
+ void data()
+ {
+ b=20;
+ cout<<b;
+ }
+};
+class C:public A 
+{
+  int c;
+ public:
+ void data()
+ {
+     A::data();
+ c=30;
+ cout<<c;
+ }
+};
+class D:public B,public C{
+  int d;
+ public:
+ void data()
+ {
+ d=40;
+ C::data();
+ B::data();
+ //A::data();
+ cout<<d;
+ }
+};
+
+int main()
+{
+    class D p;
+    p.data();
+    return 0;
+}
